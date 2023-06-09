@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
-import Link from "next/link";
-import { api } from "~/utils/api";
+import { SubSaidItList } from "~/components/r/SubSaidItList";
+// import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -23,7 +23,9 @@ const Home: NextPage = () => {
         </div>
 
         <div className="w-full border-b"></div>
-
+        <div className="p-4 text-2xl text-white">
+          <SubSaidItList />
+        </div>
         <div className="p-4 text-2xl text-white">Posts</div>
       </main>
     </>
