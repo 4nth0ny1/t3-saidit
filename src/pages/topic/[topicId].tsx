@@ -15,17 +15,12 @@ const SingleTopicPage: NextPage = () => {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div className="w-full text-white">
-      <div className="hero h-[400px]">
-        <div className="hero-content flex-col lg:flex-row">
-          {/* <img
-            src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-            className="max-w-sm rounded-lg shadow-2xl"
-          /> */}
+    <div className="w-full  text-white">
+      <div className="h-[400px hero">
+        <div className="hero-content flex-col lg:flex-row ">
           <div>
             <h1 className="text-5xl font-bold ">{data?.name}</h1>
             <p className="py-6 ">{data?.description}</p>
-            <button className="btn-primary btn">Get Started</button>
           </div>
         </div>
       </div>

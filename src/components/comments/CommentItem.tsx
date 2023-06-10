@@ -14,7 +14,7 @@ export function CommentItem({ comment }: CommentProps) {
   return (
     <div className="flex flex-col border-b p-4">
       <div className="flex flex-row justify-between ">
-        <h2 className="text-xl">{message}</h2>
+        <p className="text-xl">{message}</p>
 
         <span className="font-thin italic">{` Posted ${dayjs(
           createdAt

@@ -15,10 +15,15 @@ const SinglePostPage: NextPage = () => {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div className="p-10 text-white">
-      <h2>{data?.title}</h2>
-      <p>{data?.content}</p>
-      <div className="border-4-black w-full border-b"></div>
+    <div className="w-full  text-white">
+      <div className="h-[400px hero">
+        <div className="hero-content flex-col lg:flex-row ">
+          <div>
+            <h1 className="text-5xl font-bold ">{data?.title}</h1>
+            <p className="py-6 ">{data?.content}</p>
+          </div>
+        </div>
+      </div>
       <CommentList postId={postId} />
     </div>
   );
