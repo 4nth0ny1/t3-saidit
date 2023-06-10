@@ -15,11 +15,14 @@ const SingleTopicPage: NextPage = () => {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div className="p-10 text-white">
-      <h2 className="text-3xl">{data?.name}</h2>
-      <p>{data?.description}</p>
-      <div className="border-4-black w-full border-b"></div>
-      <PostList topicId={topicId} />
+    <div className="flex w-full flex-row text-white">
+      <div className="h-[100vh] w-[15%] border-r-2 p-10">
+        <h2 className="text-3xl">{data?.name}</h2>
+        <p>{data?.description}</p>
+      </div>
+      <div className="w-[85%] py-10">
+        <PostList topicId={topicId} />
+      </div>
     </div>
   );
 };
