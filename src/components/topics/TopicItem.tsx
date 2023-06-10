@@ -6,19 +6,15 @@ type TopicProps = {
 };
 
 export function TopicItem({ topic }: TopicProps) {
-  const { id, name, description } = topic;
+  const { id, name } = topic;
 
   return (
     <div className="card m-4 w-96 bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title text-black">{name}</h2>
-        <p className="text-black">{description}</p>
-        <div className="card-actions justify-end">
-          <Link href={`/topic/${id}`}>
-            <button className="btn-primary btn">View</button>
-          </Link>
+      <Link href={`/topic/${id}`}>
+        <div className="card-body">
+          <button className="btn text-black">{name}</button>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
