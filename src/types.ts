@@ -10,3 +10,14 @@ export type Topic = allTopicsOutput[number]
 export const getSingleTopic = z.object({
     topicId: z.string().cuid(),
   })
+
+type allPostsOutput = RouterOutputs['post']['getAllPosts']
+export type Post = allPostsOutput[number]
+
+export const getAllPosts = z.object({
+  topicId: z.string().cuid()
+})
+
+export const getSinglePost = z.object({
+  postId: z.string().cuid(),
+})
