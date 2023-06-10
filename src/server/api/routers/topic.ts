@@ -5,9 +5,9 @@ import {
 
 } from "~/server/api/trpc";
 
-export const subSaidItRouter = createTRPCRouter({
-  getAllSubSaidIts: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.subSaidIt.findMany({
+export const topicRouter = createTRPCRouter({
+  getAllTopics: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.topic.findMany({
         orderBy: [{ createdAt: "desc" }],
     });
   }),

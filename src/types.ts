@@ -3,6 +3,6 @@ import { z } from 'zod'
 import type {AppRouter} from './server/api/root'
 
 type RouterOutputs = inferRouterOutputs<AppRouter>;
-type allSubSaidItsOutput = RouterOutputs['subSaidIt']['getAllSubSaidIts']
+type allTopicsOutput = RouterOutputs['topic']['getAllTopics']
 
-export type SubSaidIt = allSubSaidItsOutput[number]
+export type Topic = allTopicsOutput[number]
