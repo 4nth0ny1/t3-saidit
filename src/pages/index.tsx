@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
-import { TopicList } from "~/components/r/TopicList";
+import { TopicList } from "~/components/topics/TopicList";
 // import Link from "next/link";
 
 const Home: NextPage = () => {
