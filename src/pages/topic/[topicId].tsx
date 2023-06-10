@@ -16,7 +16,7 @@ const SingleTopicPage: NextPage = () => {
 
   return (
     <div className="p-10">
-      <h2>{data?.name}</h2>
+      <h2 className="text-3xl">{data?.name}</h2>
       <p>{data?.description}</p>
       <div className="border-4-black w-full border-b"></div>
       <PostList topicId={topicId} />
