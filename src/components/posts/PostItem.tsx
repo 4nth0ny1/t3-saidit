@@ -1,24 +1,28 @@
 import type { Post } from "../../types";
 import Link from "next/link";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 type PostProps = {
   post: Post;
 };
 
+dayjs.extend(relativeTime);
+
 export function PostItem({ post }: PostProps) {
-  const { id, title, content } = post;
+  const { id, title, content, createdAt } = post;
 
   return (
-    <div className="card m-4 w-96 bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title text-black">{title}</h2>
-        <p className="text-black">{content}</p>
-        <div className="card-actions justify-end">
-          <Link href={`post/${id}`}>
-            <button className="btn-primary btn">View</button>
-          </Link>
-        </div>
+    <div className="flex flex-col border-b p-4">
+      <div className="flex flex-row justify-between ">
+        <Link href={`/topic/post/${id}`}>
+          <h2 className="text-xl">{title}</h2>
+        </Link>
+        <span className="font-thin italic">{` Posted ${dayjs(
+          createdAt
+        ).fromNow()}`}</span>
       </div>
+      <p>{content}</p>
     </div>
   );
 }

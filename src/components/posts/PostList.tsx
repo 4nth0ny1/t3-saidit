@@ -16,9 +16,9 @@ export function PostList({ topicId }: TopicIdProps) {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div>
-      <h2 className="pb-4 text-center text-3xl">Posts</h2>
-      <div className="flex flex-row flex-wrap">
+    <div className="flex flex-col items-center justify-center">
+      <h2 className="p-4 text-center text-3xl">Posts</h2>
+      <div className="w-1/2 items-center">
         {posts?.map((post) => {
           return <PostItem key={post.id} post={post} />;
         })}
