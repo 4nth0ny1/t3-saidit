@@ -15,7 +15,7 @@ const SinglePostPage: NextPage = () => {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div className="p-10">
+    <div className="p-10 text-white">
       <h2>{data?.title}</h2>
       <p>{data?.content}</p>
       <div className="border-4-black w-full border-b"></div>

@@ -15,7 +15,7 @@ const SingleTopicPage: NextPage = () => {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div className="p-10">
+    <div className="p-10 text-white">
       <h2 className="text-3xl">{data?.name}</h2>
       <p>{data?.description}</p>
       <div className="border-4-black w-full border-b"></div>
