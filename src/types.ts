@@ -6,3 +6,7 @@ type RouterOutputs = inferRouterOutputs<AppRouter>;
 type allTopicsOutput = RouterOutputs['topic']['getAllTopics']
 
 export type Topic = allTopicsOutput[number]
+
+export const getSingleTopic = z.object({
+    topicId: z.string().cuid(),
+  })

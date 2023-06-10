@@ -12,9 +12,12 @@ export function TopicList() {
   if (isError) return <div>Something went wrong</div>;
   return (
     <div>
-      {topics?.map((topic) => {
-        return <TopicItem key={topic.id} topic={topic} />;
-      })}
+      <h2 className="pb-4 text-center text-3xl">Topics</h2>
+      <div className="flex flex-row flex-wrap">
+        {topics?.map((topic) => {
+          return <TopicItem key={topic.id} topic={topic} />;
+        })}
+      </div>
     </div>
   );
 }

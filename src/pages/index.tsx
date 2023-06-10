@@ -26,7 +26,6 @@ const Home: NextPage = () => {
         <div className="p-4 text-2xl text-white">
           <TopicList />
         </div>
-        <div className="p-4 text-2xl text-white">Posts</div>
       </main>
     </>
   );
