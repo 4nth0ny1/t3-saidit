@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { api } from "../../../utils/api";
 import { type NextPage } from "next";
+import { CommentList } from "../../../components/comments/CommentList";
 
 const SinglePostPage: NextPage = () => {
   const router = useRouter();
@@ -18,6 +19,7 @@ const SinglePostPage: NextPage = () => {
       <h2>{data?.title}</h2>
       <p>{data?.content}</p>
       <div className="border-4-black w-full border-b"></div>
+      <CommentList postId={postId} />
     </div>
   );
 };
