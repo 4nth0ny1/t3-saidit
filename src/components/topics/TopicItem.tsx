@@ -9,12 +9,10 @@ export function TopicItem({ topic }: TopicProps) {
   const { id, name } = topic;
 
   return (
-    <div className="card m-4 w-96 bg-base-100 shadow-xl">
-      <Link href={`/topic/${id}`}>
-        <div className="card-body">
-          <button className="btn text-black">{name}</button>
-        </div>
-      </Link>
-    </div>
+    <Link href={`/topic/${id}`}>
+      <div className="flex flex-row justify-center p-4">
+        <button className="btn text-black">{name}</button>
+      </div>
+    </Link>
   );
 }
