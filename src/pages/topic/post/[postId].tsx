@@ -15,8 +15,8 @@ const SinglePostPage: NextPage = () => {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div className="w-full  text-white">
-      <div className="h-[400px hero">
+    <div className="w-full text-white">
+      <div className="hero h-[400px]">
         <div className="hero-content flex-col lg:flex-row ">
           <div>
             <h1 className="text-5xl font-bold ">{data?.title}</h1>
