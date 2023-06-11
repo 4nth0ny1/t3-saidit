@@ -18,9 +18,9 @@ const SingleTopicPage: NextPage = () => {
   return (
     <div className="w-full  text-white">
       <Link href="/">
-        <h1 className="px-8 py-2 text-right text-xl italic text-accent">
+        <p className="px-8 py-2 text-right text-xl italic text-accent">
           back to topics
-        </h1>
+        </p>
       </Link>
       <div className="hero h-[400px]">
         <div className="hero-content flex-col lg:flex-row ">
