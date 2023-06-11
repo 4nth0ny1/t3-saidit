@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { api } from "../../utils/api";
 import { type NextPage } from "next";
 import { PostList } from "../../components/posts/PostList";
+import Link from "next/link";
 
 const SingleTopicPage: NextPage = () => {
   const router = useRouter();
@@ -16,10 +17,15 @@ const SingleTopicPage: NextPage = () => {
 
   return (
     <div className="w-full  text-white">
-      <div className="h-[400px hero">
+      <Link href="/">
+        <h1 className="px-8 py-2 text-right text-xl italic text-accent">
+          back to topics
+        </h1>
+      </Link>
+      <div className="hero h-[400px]">
         <div className="hero-content flex-col lg:flex-row ">
           <div>
-            <h1 className="text-5xl font-bold ">{data?.name}</h1>
+            <h2 className="text-5xl font-bold ">{data?.name}</h2>
             <p className="py-6 ">{data?.description}</p>
           </div>
         </div>
