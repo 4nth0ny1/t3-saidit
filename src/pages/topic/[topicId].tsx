@@ -3,6 +3,7 @@ import { api } from "../../utils/api";
 import { type NextPage } from "next";
 import { PostList } from "../../components/posts/PostList";
 import Link from "next/link";
+import { CreatePost } from "../../components/posts/CreatePost";
 
 const SingleTopicPage: NextPage = () => {
   const router = useRouter();
@@ -27,6 +28,7 @@ const SingleTopicPage: NextPage = () => {
           <div>
             <h2 className="text-5xl font-bold ">{data?.name}</h2>
             <p className="py-6 ">{data?.description}</p>
+            <CreatePost />
           </div>
         </div>
       </div>
