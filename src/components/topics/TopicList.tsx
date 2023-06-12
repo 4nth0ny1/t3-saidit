@@ -1,5 +1,6 @@
 import { api } from "../../utils/api";
 import { TopicItem } from "./TopicItem";
+import { CreateTopic } from "./CreateTopic";
 
 export function TopicList() {
   const {
@@ -13,6 +14,7 @@ export function TopicList() {
   return (
     <div>
       <h2 className="pb-4 text-center text-3xl">Topics</h2>
+      <CreateTopic />
       <div className="flex flex-row flex-wrap">
         {topics?.map((topic) => {
           return <TopicItem key={topic.id} topic={topic} />;

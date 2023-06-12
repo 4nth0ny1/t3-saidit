@@ -1,6 +1,7 @@
 import { z } from "zod";
 import {
   createTRPCRouter,
+  protectedProcedure,
   publicProcedure,
 
 } from "~/server/api/trpc";
@@ -22,4 +23,21 @@ export const topicRouter = createTRPCRouter({
       }
     })
   }),
+
+  createTopic: protectedProcedure
+  .input(z.object({name: z.string(), description: z.string()}))
+  .mutation(({ctx, input}) => {
+    return ctx.prisma.topic.create({
+      data: {
+        name: input.name,
+        description: input.description,
+        user: {
+          connect: {
+            id: ctx.session.user.id
+          }
+        }
+      }
+    })
+  }),
+
 });
