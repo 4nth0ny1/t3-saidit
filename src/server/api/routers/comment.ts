@@ -1,6 +1,7 @@
 import { z } from "zod";
 import {
   createTRPCRouter,
+  protectedProcedure,
   publicProcedure,
 
 } from "~/server/api/trpc";
@@ -19,5 +20,31 @@ export const commentRouter = createTRPCRouter({
         orderBy: [{ createdAt: "desc" }],
     });
   }),
+
+  createComment: protectedProcedure
+  .input(z.object({message: z.string(), postId: z.string(), topicId: z.string()}))
+  .mutation(({ctx, input}) => {
+    return ctx.prisma.comment.create({
+      data: {
+        message: input.message,
+        user: {
+          connect: {
+            id: ctx.session.user.id
+          }
+        },
+        topic: {
+          connect: {
+            id: input.topicId
+          }
+        }, 
+        post: {
+          connect: {
+            id: input.postId
+          }
+        }
+        
+      }
+    })
+  })
 
 });

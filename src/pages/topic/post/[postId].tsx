@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { api } from "../../../utils/api";
 import { type NextPage } from "next";
 import { CommentList } from "../../../components/comments/CommentList";
+import { CreateComment } from "../../../components/comments/CreateComment";
 import Link from "next/link";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -34,6 +35,7 @@ const SinglePostPage: NextPage = () => {
             <span className="font-thin italic">{` Posted ${dayjs(
               data?.createdAt
             ).fromNow()}`}</span>
+            <CreateComment topicId={data?.topicId} />
           </div>
         </div>
       </div>
