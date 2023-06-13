@@ -10,6 +10,8 @@ export function CreateTopic() {
   const { mutate } = api.topic.createTopic.useMutation({
     onSettled: async () => {
       await ctx.topic.getAllTopics.invalidate();
+      setName("");
+      setDescription("");
     },
   });
 

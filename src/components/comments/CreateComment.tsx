@@ -23,7 +23,7 @@ export function CreateComment({ topicId }: TopicIdProps) {
 
   return (
     <form
-      className="m-4 flex min-w-[400px] flex-col items-center"
+      className="m-4 flex min-w-[400px] flex-row gap-4"
       onSubmit={(e) => {
         e.preventDefault();
         mutate({ message, postId, topicId });
