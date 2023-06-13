@@ -26,6 +26,5 @@ type allCommentsOutput = RouterOutputs['comment']['getAllComments']
 export type Comment = allCommentsOutput[number]
 
 export const getAllComments = z.object({
-
   postId: z.string().cuid()
 })

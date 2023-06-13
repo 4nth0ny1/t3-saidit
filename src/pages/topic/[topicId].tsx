@@ -4,27 +4,22 @@ import { type NextPage } from "next";
 import { PostList } from "../../components/posts/PostList";
 import Link from "next/link";
 import { CreatePost } from "../../components/posts/CreatePost";
-// import { redirect } from "next/navigation";
+import { Hero } from "../../components/Hero";
 
 const SingleTopicPage: NextPage = () => {
   const router = useRouter();
   const topicId = router.query.topicId as string;
 
-  const { data, isLoading, isError } = api.topic.getOneTopic.useQuery({
+  const {
+    data: topic,
+    isLoading,
+    isError,
+  } = api.topic.getOneTopic.useQuery({
     topicId,
   });
 
   if (isLoading) return <div>Loading ...</div>;
   if (isError) return <div>Something went wrong</div>;
-
-  // const ctx = api.useContext();
-
-  // const { mutate: deleteMutation } = api.topic.deleteTopic.useMutation({
-  //   onSettled: async () => {
-  //     await ctx.topic.getAllTopics.invalidate();
-  //     redirect("/");
-  //   },
-  // });
 
   return (
     <div className="w-full  text-white">
@@ -33,26 +28,8 @@ const SingleTopicPage: NextPage = () => {
           back to all topics
         </p>
       </Link>
-      <div className="hero h-[400px]">
-        <div className="hero-content flex flex-col">
-          <div className="flex w-full flex-row justify-between">
-            <div>
-              <h2 className="text-5xl font-bold ">{data?.name}</h2>
-              <p className="py-6 ">{data?.description}</p>
-            </div>
-            {/* <button
-              onClick={() => {
-                deleteMutation(data?.id as string);
-                redirect("/");
-              }}
-              className="btn-warning btn"
-            >
-              delete
-            </button> */}
-          </div>
-          <CreatePost />
-        </div>
-      </div>
+      <Hero topic={topic} />
+      <CreatePost />
       <PostList topicId={topicId} />
     </div>
   );
