@@ -30,7 +30,7 @@ const SingleTopicPage: NextPage = () => {
     <div className="w-full  text-white">
       <Link href="/">
         <p className="px-8 py-2 text-right text-xl italic text-accent">
-          back to topics
+          back to all topics
         </p>
       </Link>
       <div className="hero h-[400px]">

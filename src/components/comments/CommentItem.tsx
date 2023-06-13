@@ -25,7 +25,7 @@ export function CommentItem({ comment }: CommentProps) {
       <div className="flex flex-row justify-between ">
         <p className="text-xl">{message}</p>
 
-        <span className="font-thin italic">{` Posted ${dayjs(
+        <span className="font-thin italic">{` Commented ${dayjs(
           createdAt
         ).fromNow()}`}</span>
         <button

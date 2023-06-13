@@ -21,16 +21,14 @@ const SinglePostPage: NextPage = () => {
   return (
     <div className="w-full text-white">
       <Link href={`/topic/${data?.topicId as string}`}>
-        <p className="px-8 py-2 text-right text-xl italic text-accent">
-          back to previous topic
-        </p>
+        <p className="px-8 py-2 text-right text-xl italic text-accent">back</p>
       </Link>
       <div className="hero h-[400px]">
         <div className="hero-content flex-col lg:flex-row ">
           <div>
             <h1 className="text-5xl font-bold ">{data?.title}</h1>
             <p className="py-6 ">{data?.content}</p>
-            <span className="font-thin italic">{` Posted ${dayjs(
+            <span className="font-thin italic">{` Created ${dayjs(
               data?.createdAt
             ).fromNow()}`}</span>
             <CreateComment topicId={data?.topicId as string} />
