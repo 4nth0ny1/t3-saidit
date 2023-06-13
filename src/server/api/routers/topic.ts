@@ -40,4 +40,14 @@ export const topicRouter = createTRPCRouter({
     })
   }),
 
+  deleteTopic: protectedProcedure
+  .input(z.string())
+  .mutation(({ctx, input}) => {
+    return ctx.prisma.topic.delete({
+      where: {
+        id: input
+      }
+    })
+  })
+
 });
