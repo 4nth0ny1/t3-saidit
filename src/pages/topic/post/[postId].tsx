@@ -13,9 +13,7 @@ const SinglePostPage: NextPage = () => {
   const router = useRouter();
   const postId = router.query.postId as string;
 
-  const { data, isLoading, isError } = api.post.getOnePost.useQuery({
-    postId,
-  });
+  const { data, isLoading, isError } = api.post.getOnePost.useQuery({ postId });
 
   if (isLoading) return <div>Loading ...</div>;
   if (isError) return <div>Something went wrong</div>;
@@ -35,7 +33,7 @@ const SinglePostPage: NextPage = () => {
             <span className="font-thin italic">{` Posted ${dayjs(
               data?.createdAt
             ).fromNow()}`}</span>
-            <CreateComment topicId={data?.topicId} />
+            <CreateComment topicId={data?.topicId as string} />
           </div>
         </div>
       </div>

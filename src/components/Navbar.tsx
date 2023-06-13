@@ -25,7 +25,7 @@ export function Navbar() {
           <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
             <div className="w-10 rounded-full">
               <Image
-                src={sessionData?.user.image}
+                src={sessionData?.user.image as string}
                 width={50}
                 height={50}
                 alt="Profile Image"
