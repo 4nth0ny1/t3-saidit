@@ -28,8 +28,19 @@ const SingleTopicPage: NextPage = () => {
           back to all topics
         </p>
       </Link>
+      <div className="flex w-full flex-row justify-center">
+        <div className="form-control w-[400px]">
+          <input
+            type="text"
+            placeholder="Search"
+            className="input-bordered input w-24 md:w-auto"
+          />
+        </div>
+      </div>
       <Hero topic={topic} />
-      <CreatePost />
+      <div className="mb-10 flex w-full flex-row justify-center">
+        <CreatePost />
+      </div>
       <PostList topicId={topicId} />
     </div>
   );
