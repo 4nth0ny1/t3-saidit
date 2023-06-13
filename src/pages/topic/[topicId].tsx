@@ -24,10 +24,14 @@ const SingleTopicPage: NextPage = () => {
         </p>
       </Link>
       <div className="hero h-[400px]">
-        <div className="hero-content flex-col lg:flex-row ">
-          <h2 className="text-5xl font-bold ">{data?.name}</h2>
-          <p className="py-6 ">{data?.description}</p>
-          <button className="btn-warning btn">delete</button>
+        <div className="hero-content flex flex-col">
+          <div className="flex w-full flex-row justify-between">
+            <div>
+              <h2 className="text-5xl font-bold ">{data?.name}</h2>
+              <p className="py-6 ">{data?.description}</p>
+            </div>
+            <button className="btn-warning btn">delete</button>
+          </div>
           <CreatePost />
         </div>
       </div>
