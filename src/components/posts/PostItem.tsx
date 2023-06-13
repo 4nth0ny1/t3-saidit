@@ -32,12 +32,14 @@ export function PostItem({ post }: PostProps) {
         ).fromNow()}`}</span>
       </div>
       <p>{content}</p>
-      <button
-        onClick={() => deleteMutation(id)}
-        className="btn-warning btn-sm btn w-[100px]"
-      >
-        delete
-      </button>
+      <div className="flex w-full flex-row justify-end">
+        <button
+          onClick={() => deleteMutation(id)}
+          className="btn-warning btn-sm btn w-[100px]"
+        >
+          delete
+        </button>
+      </div>
     </div>
   );
 }
