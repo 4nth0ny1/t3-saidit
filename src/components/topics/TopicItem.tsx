@@ -9,10 +9,10 @@ export function TopicItem({ topic }: TopicProps) {
   const { id, name } = topic;
 
   return (
-    <Link href={`/topic/${id}`}>
-      <div className="flex flex-row justify-center p-4">
-        <button className="btn text-black">{name}</button>
-      </div>
-    </Link>
+    <div className="flex flex-row justify-center p-4">
+      <Link href={`/topic/${id}`}>
+        <button className="btn text-black">{name}</button>{" "}
+      </Link>
+    </div>
   );
 }
