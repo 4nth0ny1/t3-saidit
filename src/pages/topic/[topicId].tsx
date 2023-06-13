@@ -25,11 +25,10 @@ const SingleTopicPage: NextPage = () => {
       </Link>
       <div className="hero h-[400px]">
         <div className="hero-content flex-col lg:flex-row ">
-          <div>
-            <h2 className="text-5xl font-bold ">{data?.name}</h2>
-            <p className="py-6 ">{data?.description}</p>
-            <CreatePost />
-          </div>
+          <h2 className="text-5xl font-bold ">{data?.name}</h2>
+          <p className="py-6 ">{data?.description}</p>
+          <button className="btn-warning btn">delete</button>
+          <CreatePost />
         </div>
       </div>
       <PostList topicId={topicId} />
