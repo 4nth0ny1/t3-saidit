@@ -18,7 +18,7 @@ export function PostList({ topicId }: TopicIdProps) {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Something went wrong</div>;
 
-  const filteredPosts = [...posts].filter((post) => {
+  const filteredPosts = posts.filter((post) => {
     return post.title.toLowerCase().includes(term.toLowerCase());
   });
 

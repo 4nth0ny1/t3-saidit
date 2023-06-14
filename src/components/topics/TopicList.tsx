@@ -14,7 +14,7 @@ export function TopicList() {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Something went wrong</div>;
 
-  const filteredTopics = [...topics].filter((topic) => {
+  const filteredTopics = topics.filter((topic) => {
     return topic.name.toLowerCase().includes(term.toLowerCase());
   });
 
