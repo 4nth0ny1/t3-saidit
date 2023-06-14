@@ -28,9 +28,11 @@ const SingleTopicPage: NextPage = () => {
           back to all topics
         </p>
       </Link>
-      <Hero topic={topic} />
-      <div className="mb-10 flex w-full flex-row justify-center">
-        <CreatePost />
+      <div className="flex flex-row justify-center">
+        <Hero topic={topic} />
+        <div className="mb-10 flex w-full flex-col justify-center">
+          <CreatePost />
+        </div>
       </div>
       <PostList topicId={topicId} />
     </div>

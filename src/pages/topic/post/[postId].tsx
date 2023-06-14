@@ -28,18 +28,11 @@ const SinglePostPage: NextPage = () => {
       <Link href={`/topic/${post?.topicId as string}`}>
         <p className="px-8 py-2 text-right text-xl italic text-accent">back</p>
       </Link>
-      <div className="flex w-full flex-row justify-center">
-        <div className="form-control w-[400px]">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input-bordered input w-24 md:w-auto"
-          />
+      <div className="flex flex-row justify-end">
+        <Hero post={post} />
+        <div className="mb-10 flex w-full flex-col justify-center">
+          <CreateComment topicId={post?.topicId as string} />
         </div>
-      </div>
-      <Hero post={post} />
-      <div className="mb-10 flex w-full flex-row justify-center">
-        <CreateComment topicId={post?.topicId as string} />
       </div>
       <CommentList postId={postId} />
     </div>
