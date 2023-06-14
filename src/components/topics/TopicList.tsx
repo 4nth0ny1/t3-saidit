@@ -22,11 +22,11 @@ export function TopicList() {
     <div>
       <h2 className="pb-4 text-center text-3xl">Topics</h2>
       <CreateTopic />
-      <div className="form-control my-10 ">
+      <div className="form-control my-10 flex flex-row justify-center">
         <input
           type="text"
           placeholder="Search"
-          className="input-bordered input w-24 text-black md:w-auto"
+          className="input-bordered input w-24 w-[400px] text-black"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
         />
